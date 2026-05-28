@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
 Exa CLI - A CLI tool for Exa WebSearch/WebFetch
 
 CLI Command:
-exa search    ->    web_search_exa
-exa fetch     ->    web_fetch_exa
+  exa search    ->    web_search_exa
+  exa fetch     ->    web_fetch_exa
 
 Installation:
   pip install exa-cli-simple
@@ -21,7 +22,8 @@ import argparse
 import json
 import os
 import sys
-
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stderr.reconfigure(encoding='utf-8')
 from exa_py import Exa
 
 
