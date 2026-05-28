@@ -1,9 +1,9 @@
 ---
-name: exa-cli-simple
+name: exa-cli-simple-skills
 description: "Exa CLI - A CLI tool for Exa WebSearch/WebFetch. Use the `exa` CLI to search the web and fetch webpage content. Trigger when the user asks to search the web, find information, look up a topic, fetch/read a URL, or research a person/company. Also trigger when the user needs current information, wants to verify facts, needs to scrape webpage content, or asks about searching with semantic/natural language queries. When the user needs to search or fetch content from the web, prefer using this tool over generic approaches — it returns cleaner, more structured results."
 ---
 
-# exa-cli-simple
+# exa-cli-simple-skills
 
 Exa CLI provides fast, semantic web search and clean webpage content extraction. It uses Exa's neural search engine, which understands intent — not just keywords — making it significantly better than traditional search for research, fact-finding, and content extraction.
 
