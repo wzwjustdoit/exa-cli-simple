@@ -80,14 +80,14 @@ def web_search_exa(args: argparse.Namespace) -> None:
 
     for i, r in enumerate(resp.results, 1):
         print(f"{i}. {r.title or '(no title)'}")
-        print(f"   URL: {r.url}")
+        print(f"  URL: {r.url}")
         if r.score is not None:
-            print(f"   Score: {r.score:.2f}")
+            print(f"  Score: {r.score:.2f}")
         if r.published_date:
-            print(f"   Published: {r.published_date}")
+            print(f"  Published: {r.published_date}")
         if r.highlights:
             for h in r.highlights[:3]:
-                print(f"   -> {h}")
+                print(f"  -> {h}")
         print()
 
 
@@ -130,20 +130,20 @@ def main():
         prog="exa",
         description="Exa CLI - A CLI tool for Exa WebSearch/WebFetch",
     )
-    parser.add_argument("--api-key", help="Exa API key (default: $EXA_API_KEY)")
-    parser.add_argument("--json", action="store_true", help="Output JSON format")
-    parser.add_argument("--indent", action="store_true", help="Pretty JSON format (use with --json)")
+
+    parent_parser = argparse.ArgumentParser(add_help=False)
+    parent_parser.add_argument("--api-key", help="Exa API key (default: $EXA_API_KEY)")
+    parent_parser.add_argument("--json", action="store_true", help="Output JSON format")
+    parent_parser.add_argument("--indent", action="store_true", help="Pretty JSON format (use with --json)")
 
     sub = parser.add_subparsers(dest="command", required=True)
 
-    # --- search ---
-    p_search = sub.add_parser("search", help="Search the web (web_search_exa)")
+    p_search = sub.add_parser("search", parents=[parent_parser, ], help="Search the web (web_search_exa)")
     p_search.add_argument("query", help="Search query (describe the ideal page, not keywords)")
     p_search.add_argument("-n", "--num-results", type=int, default=10, help="Number of results (default: 10)")
     p_search.set_defaults(func=web_search_exa)
 
-    # --- fetch ---
-    p_fetch = sub.add_parser("fetch", help="Fetch page content from URLs (web_fetch_exa)")
+    p_fetch = sub.add_parser("fetch", parents=[parent_parser, ], help="Fetch page content from URLs (web_fetch_exa)")
     p_fetch.add_argument("urls", nargs="+", help="One or more URLs to fetch")
     p_fetch.add_argument("-m", "--max-characters", type=int, default=None, help="Max characters per page (default: unlimited)")
     p_fetch.set_defaults(func=web_fetch_exa)
