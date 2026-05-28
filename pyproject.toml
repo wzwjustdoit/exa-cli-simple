@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "exa-cli-simple"
+version = "0.2.0"
+description = "Exa CLI - A CLI tool for Exa WebSearch/WebFetch"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "wzwjustsdoit", email = "wzwjustsdoit@163.com"}
+]
+keywords = ["exa", "cli", "mcp", "exa-cli", "exa-mcp", "WebSearch", "WebFetch", "web search", "web fetch"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Programming Language :: Python :: 3.16",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "exa-py>=2.1.0",
+]
+
+[project.scripts]
+exa = "exa_cli_simple.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/wzwjustdoit/exa-cli-simple"
+Repository = "https://github.com/wzwjustdoit/exa-cli-simple"

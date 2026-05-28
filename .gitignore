@@ -1,0 +1,46 @@
+
+# --- My ---
+src/exa_cli_simple.egg-info/
+
+# --- Python ---
+__pycache__/
+*.pyo
+*.pyd
+*.pyc
+*.egg
+*.egg-info/
+eggs/
+.eggs/
+dist/
+.ipynb_checkpoints
+.pytest_cache/
+.mypy_cache/
+
+# --- Virtual environments ---
+venv/
+env/
+ENV/
+.venv/
+.env
+.env.*
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# --- Logs ---
+*.log
+
+# --- MacOS ---
+.DS_Store
+
+# --- Windows ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Linux ---
+*~
