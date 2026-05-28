@@ -33,6 +33,15 @@ def may_json_dumps_error(error, args: argparse.Namespace):
     return json.dumps({"error": error}, indent=may_indent(args), ensure_ascii=False) if args.json else error
 
 
+def compat_to_dict(obj):
+    """Convert object to dict, compatible with Pydantic v1 (.dict()) and v2 (.model_dump())."""
+    if hasattr(obj, "model_dump"):
+        return obj.model_dump()
+    if hasattr(obj, "dict"):
+        return obj.dict()
+    return vars(obj)
+
+
 def get_client(args: argparse.Namespace) -> Exa:
     api_key = args.api_key or os.environ.get("EXA_API_KEY")
     if not api_key:
@@ -60,7 +69,7 @@ def web_search_exa(args: argparse.Namespace) -> None:
         sys.exit(1)
 
     if args.json:
-        print(json.dumps([r.model_dump() for r in resp.results], indent=may_indent(args), ensure_ascii=False))
+        print(json.dumps([compat_to_dict(r) for r in resp.results], indent=may_indent(args), ensure_ascii=False))
         return
 
     if not resp.results:
@@ -93,7 +102,7 @@ def web_fetch_exa(args: argparse.Namespace) -> None:
         sys.exit(1)
 
     if args.json:
-        print(json.dumps([r.model_dump() for r in resp.results], indent=may_indent(args), ensure_ascii=False))
+        print(json.dumps([compat_to_dict(r) for r in resp.results], indent=may_indent(args), ensure_ascii=False))
         return
 
     if not resp.results:
