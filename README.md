@@ -1,4 +1,4 @@
-# exa-cli-simple
+# About: exa-cli-simple
 
 Exa CLI - A CLI tool for Exa WebSearch/WebFetch
 
@@ -43,3 +43,29 @@ Fetch full page content as clean text from one or more URLs.
 | `--api-key` | Exa API key (default: $EXA_API_KEY) |
 | `--json` | Output JSON format |
 | `--indent` | Pretty JSON format (use with --json) |
+
+
+---
+
+
+# How to add a skill to ai agent?
+
+@see [skills/exa-cli-simple-skills/SKILL.md](https://github.com/wzwjustdoit/exa-cli-simple/blob/master/skills/exa-cli-simple-skills/SKILL.md)
+
+## npx skills add
+```bash
+npx skills add https://github.com/wzwjustdoit/exa-cli-simple --skill exa-cli-simple-skills
+```
+
+## or manual: git clone
+```bash
+git clone https://github.com/wzwjustdoit/exa-cli-simple
+# examples
+cp -r exa-cli-simple/skills/exa-cli-simple-skills ~/.claude/skills/
+cp -r exa-cli-simple/skills/exa-cli-simple-skills /path/to/your_project/.claude/skills/
+
+# or
+# ~/.codex/skills/
+# ~/.config/opencode/skills/
+# ~/.agents/skills/
+```
