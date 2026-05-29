@@ -74,7 +74,7 @@ cp -r exa-cli-simple/skills/exa-cli-simple-skills /path/to/your_project/.claude/
 # ~/.continue/skills/
 # ~/.cursor/skills/
 # ~/.hermes/skills/
-# ~/.pi/agent/skills//
+# ~/.pi/agent/skills/
 # ~/.qoder/skills/
 # ~/.qwen/skills/
 # ~/.trae/skills/
