@@ -1,5 +1,5 @@
 ---
-name: exa-cli-simple
+name: exa-cli-simple-skills
 description: >-
   Use this skill whenever the user wants to search the web, fetch web page
   content, look up information online, retrieve URLs, do web research, or

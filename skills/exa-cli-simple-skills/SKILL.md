@@ -1,5 +1,5 @@
 ---
-name: exa-cli-simple
+name: exa-cli-simple-skills
 description: >
   CLI tool that wraps Exa's WebSearch and WebFetch APIs.
   Trigger when the user needs to search the web, find up-to-date information,

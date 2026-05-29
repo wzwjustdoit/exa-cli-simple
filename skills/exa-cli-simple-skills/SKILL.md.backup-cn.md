@@ -1,5 +1,5 @@
 ---
-name: exa-cli-simple
+name: exa-cli-simple-skills
 description: >
   CLI 工具，封装 Exa 搜索引擎的 WebSearch 和 WebFetch API。
   当用户需要搜索互联网、查找最新信息、获取网页内容时触发。
